@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/five_20220428.css" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+   
+</head>
+<body>
+    <div id="narae-browsing">
+        <div style="margin: 3vh 4vw;">●&nbsp;&nbsp;5층 외래진료센터</div>
+        <div class="browsing-wrap">
+            <div class="container browsing-slide-wrap">
+                <div class="mySlides browsing-1-img" style="display: block; border: none; opacity: 1;">
+                    <img src="img/center_5_1.jpg" class="narae-home-img"></div>
+                <div class="mySlides browsing-2-img" style="display: none; border: none;">
+                    <img src="img/center_5_2.JPG" class="narae-home-img"></div>
+                <div class="mySlides browsing-3-img" style="display: none; border: none;">
+                    <img src="img/center_5_3.JPG" class="narae-home-img"></div>
+                <div class="mySlides browsing-4-img" style="display: none; border: none;">
+                    <img src="img/center_5_4.jpg" class="narae-home-img"></div>
+                <div class="mySlides browsing-5-img" style="display: none; border: none;">
+                    <img src="img/center_5_5.jpg" class="narae-home-img"></div>
+                <div class="mySlides browsing-6-img" style="display: none; border: none;">
+                    <img src="img/center_5_6.JPG" class="narae-home-img"></div>
+                <div class="mySlides browsing-7-img" style="display: none; border: none;">
+                    <img src="img/center_5_7.jpg" class="narae-home-img"></div>
+                <div class="mySlides browsing-8-img" style="display: none; border: none;">
+                    <img src="img/center_5_8.JPG" class="narae-home-img"></div>
+                
+                <div class="caption-container">
+                </div>
+                <div class="row">
+                    <div class="column browsing-1-img" onclick="currentSlide(1)" style="border: 1px solid black; opacity: 1;">
+                        <img src="img/center_5_1.jpg" class="narae-home-img"></div>
+                    <div class="column browsing-2-img" onclick="currentSlide(2)">
+                        <img src="img/center_5_2.JPG" class="narae-home-img"></div>
+                    <div class="column browsing-3-img" onclick="currentSlide(3)">
+                        <img src="img/center_5_3.JPG" class="narae-home-img"></div>
+                    <div class="column browsing-4-img" onclick="currentSlide(4)">
+                        <img src="img/center_5_4.JPG" class="narae-home-img"></div>
+                    <div class="column browsing-5-img" onclick="currentSlide(5)">
+                        <img src="img/center_5_5.jpg" class="narae-home-img"></div>
+                    <div class="column browsing-6-img" onclick="currentSlide(6)">
+                        <img src="img/center_5_6.JPG" class="narae-home-img"></div>
+                    <div class="column browsing-7-img" onclick="currentSlide(7)">
+                        <img src="img/center_5_7.JPG" class="narae-home-img"></div>
+                    <div class="column browsing-8-img" onclick="currentSlide(8)">
+                        <img src="img/center_5_8.JPG" class="narae-home-img"></div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+    <script>
+        
+        var slideIndex = 1;
+        (function() {
+            showSlides(slideIndex, "mySlides1");
+            showSlides(slideIndex, "mySlides");
+            showSlides(slideIndex, "mySlides2");
+
+
+            axios.get('/api/v1/naraeHome', {
+                params : {pageName : "browsing"}
+            }).then(function(res) {
+                let naraeHome = utils.payload(res).data.naraeHome;
+                loadImg(naraeHome);
+            }).catch(home.response.error);
+
+            function loadImg(data) {
+                utils.each(data, function(img) {
+                    $('.'+img.id).empty().append(utils.template.build('naraeHome-img-template', img));
+                    if(img.id == 'browsing-1-img'){
+                        $('.browsing-1-img').css({'border':'1px solid black','opacity':'1'});
+                        $('.mySlides').css({'border':'none'});
+                    }else if(img.id == 'browsing-11-img'){
+                        $('.browsing-11-img').css({'border':'1px solid black','opacity':'1'});
+                        $('.mySlides1').css({'border':'none'});
+                    }else if(img.id == 'browsing-20-img'){
+                        $('.browsing-20-img').css({'border':'1px solid black','opacity':'1'});
+                        $('.mySlides2').css({'border':'none'});
+                    }
+                })
+            }
+
+
+        })();
+
+        function check(img){
+            window.aler
+        }
+
+
+        $('.column').on('click',function (e){
+            var that1=e.currentTarget.className.substring(0,6);
+            $('.'+that1).css({'border':'0px','opacity':'0.5'});
+            var that2= e.currentTarget.className.substring(7,22);
+            $('.'+that2).css({'border':'1px solid black','opacity':'1'});
+            $('.mySlides').css({'border':'0px'});
+        })
+
+        $('.column1').on('click',function (e){
+            var that1=e.currentTarget.className.substring(0,7);
+            $('.'+that1).css({'border':'0px','opacity':'0.5'});
+            var that2= e.currentTarget.className.substring(8,23);
+            $('.'+that2).css({'border':'1px solid black','opacity':'1'});
+            $('.mySlides1').css({'border':'0px'});
+        })
+
+        $('.column2').on('click',function (e){
+            var that1=e.currentTarget.className.substring(0,7);
+            $('.'+that1).css({'border':'0px','opacity':'0.5'});
+            var that2= e.currentTarget.className.substring(8,23);
+            $('.'+that2).css({'border':'1px solid black','opacity':'1'});
+            $('.mySlides2').css({'border':'0px'});
+        })
+
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n, "mySlides");
+        }
+        function currentSlide1(n){
+            // showSlides1(slideIndex=n, "mySlides1");
+            showSlides(slideIndex=n, "mySlides1");
+        }
+        function currentSlide2(n){
+            showSlides(slideIndex=n, "mySlides2");
+        }
+
+        function showSlides(n, classname) {
+            var i;
+            var slides = document.getElementsByClassName(classname);
+            var dots = document.getElementsByClassName("demo");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
