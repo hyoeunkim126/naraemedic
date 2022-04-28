@@ -101,8 +101,12 @@
              background:url(../img/bullet.png); }
     
         /* 진료시간 and 약도 */
-        .hours-map-wrap { width: 100%; display: flex; flex-direction: column;}
+        .hours-map-wrap { width: 90%; display: flex; 
+            flex-direction: column; margin:0 auto;}
         .hours-map-wrap>div { width:100%;}
         .hours-map-wrap>div img{width: 100%;}
+
+        .event_banner{width: 90%; margin:0 auto;}
+	    .event_banner img{width: 100%;}
         
 }
