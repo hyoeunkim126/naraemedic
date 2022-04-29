@@ -5,6 +5,16 @@
 @media screen and (min-width:1100px) {
 	#narae-browsing {width: 1100px;}
 	.browsing-wrap{width: 70%;}
+	.column {
+		height: 70%;
+		margin-top: 2vh;
+		margin-left: 0.2vw;
+		width: 9.2%;
+		display: inline-block;
+		white-space: nowrap;
+		cursor: pointer;
+		opacity: 0.5;
+	}
 }
 
 
@@ -23,8 +33,17 @@
 		position: absolute;
 		top: 0;
 	}
-	.mySlides { height: 0;}
+	.mySlides { height: 40vh;}
 
+	.column {
+		height: 70%;
+		margin-top: 2vh;
+		margin-left: 0.2vw;
+		display: inline-block;
+		white-space: nowrap;
+		cursor: pointer;
+		opacity: 0.5;
+	}
 }
 
 
@@ -1653,7 +1672,7 @@ a.underline {
 	display: table;
 	clear: both;
 }
-.column {
+/* .column {
 	height: 70%;
 	margin-top: 2vh;
 	margin-left: 0.2vw;
@@ -1662,7 +1681,7 @@ a.underline {
 	white-space: nowrap;
 	cursor: pointer;
 	opacity: 0.5;
-}
+} */
 .column1 ,.column2 {
 	height: 70%;
 	margin-top: 2vh;
@@ -1696,7 +1715,7 @@ a.underline {
 	width: 80%;
 	margin: 0 auto;
 }
-.mySlides,.mySlides1,.mySlides2 {
+.mySlides1,.mySlides2 {
 	display: none;
 	height: 60vh;
 	animation: fadein 2s;
