@@ -2,9 +2,9 @@
 @import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 
 /*  홍보팀 */
-@media screen and (min-width:1200px) {
-	#narae-browsing {width: 1200px;}
-	.browsing-wrap{width: 1200px;}
+@media screen and (min-width:1100px) {
+	#narae-browsing {width: 1100px;}
+	.browsing-wrap{width: 70%;}
 }
 
 
@@ -13,7 +13,7 @@
 	#narae-browsing {width: 95%;
 		margin: 0 auto;}
 	.browsing-wrap{
-		width: 90%;
+		width: 80%;
 		
 		margin: 0px auto 10vh;
 	}
