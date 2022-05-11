@@ -1682,16 +1682,16 @@ a.underline {
 	cursor: pointer;
 	opacity: 0.5;
 } */
-.column1 ,.column2 {
+/* .column1 ,.column2 {
 	height: 70%;
 	margin-top: 2vh;
 	margin-left: 0.3vw;
-	/* width: 10%; */
+	width: 10%;
 	display: inline-block;
 	white-space: nowrap;
 	cursor: pointer;
 	opacity: 0.5;
-}
+} */
 .demo {
 	opacity: 0.6;
 }
@@ -1715,10 +1715,10 @@ a.underline {
 	width: 80%;
 	margin: 0 auto;
 }
-.mySlides1,.mySlides2 {
+/* .mySlides1,.mySlides2 {
 	display: none;
 	animation: fadein 2s;
-}
+} */
 .mySlides4 {
 	display: none;
 }
