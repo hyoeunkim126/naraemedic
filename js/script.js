@@ -17,9 +17,14 @@ $(function(){
 
 $(function(){
     $('.mainmenu>li').mouseenter(function(){
-        $(this).find('.submenu').stop().slideDown();
+        $(this).find('.submenu').stop().fadeIn('fast');
     });
     $('.mainmenu>li').mouseleave(function(){
-        $(this).find('.submenu').stop().slideUp();
+        $(this).find('.submenu').stop().fadeOut('fast');
     });
+});
+$(function(){
+    $('.sub_title_box_1').click(){
+        $(this).children('.inactive')
+    };
 });
